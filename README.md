@@ -1,2 +1,2 @@
 # ProjektCPK
-2022, maszyny dla Centralnego Portu Komunikacyjnego
+WIP, maszyny dla Centralnego Portu Komunikacyjnego
