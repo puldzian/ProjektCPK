@@ -1,2 +1,3 @@
 # ProjektCPK
-WIP, maszyny dla Centralnego Portu Komunikacyjnego
+WIP, "Warianty infrastrukturalne" dla Centralnego Portu Komunikacyjnego
+HTML, CSS i JavaScript.
