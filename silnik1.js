@@ -58,18 +58,22 @@ const dodajObrazek = function (folder) {
     var cssKatObrazka = "rotate(" + katObrazka + "deg)";
     obrazek.style.transform = cssKatObrazka;
     document.getElementById('canvas').appendChild(obrazek);
+    
 }
 
 // DZIAŁANIE! 
 for (i = 0; i < 3; i++) {
-   dodajObrazek(0);
+    setTimeout(dodajObrazek(0),1000);
 }
+
+/*
 for (i = 0; i < 16; i++) {
-    dodajObrazek(1);
+    setTimeout(dodajObrazek(1),500);
  }
  for (i = 0; i < 6; i++) {
-    dodajObrazek(2);
+    setTimeout(dodajObrazek(2),500);
  }
  for (i = 0; i < 3; i++) {
-    dodajObrazek(3);
+    setTimeout(dodajObrazek(3),500);
  }
+ */
