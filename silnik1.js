@@ -66,7 +66,7 @@ for (i = 0; i < 3; i++) {
     setTimeout(dodajObrazek(0),1000);
 }
 
-/*
+
 for (i = 0; i < 16; i++) {
     setTimeout(dodajObrazek(1),500);
  }
@@ -76,4 +76,3 @@ for (i = 0; i < 16; i++) {
  for (i = 0; i < 3; i++) {
     setTimeout(dodajObrazek(3),500);
  }
- */
