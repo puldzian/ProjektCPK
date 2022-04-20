@@ -1,10 +1,10 @@
 // STAŁE PORZĄDKOWE
 
 var nObrazkow = 10; // Minimalna liczba obrazków na ekranie
-const n0Grunt = 3; // Liczba grafik ziemi, folder 0
-const n1Male = 37; // Liczba grafik budynków, folder 1Male
-const n2Srednie = 6; // jw
-const n3Duze = 4; // jw
+const n0Grunt = 30; // Liczba grafik ziemi, folder 0
+const n1Male = 44; // Liczba grafik budynków, folder 1Male
+const n2Srednie = 11; // jw
+const n3Duze = 9; // jw
 const xy_w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 const xy_h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     // wymiary ekranu
@@ -58,16 +58,14 @@ const dodajObrazek = function (folder) {
     var cssKatObrazka = "rotate(" + katObrazka + "deg)";
     obrazek.style.transform = cssKatObrazka;
     document.getElementById('canvas').appendChild(obrazek);
-    
 }
 
 // DZIAŁANIE! 
-for (i = 0; i < 3; i++) {
+for (i = 0; i < 6; i++) {
     setTimeout(dodajObrazek(0),1000);
 }
 
-
-for (i = 0; i < 16; i++) {
+for (i = 0; i < 15; i++) {
     setTimeout(dodajObrazek(1),500);
  }
  for (i = 0; i < 6; i++) {
