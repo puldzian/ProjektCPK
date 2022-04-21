@@ -60,17 +60,38 @@ const dodajObrazek = function (folder) {
     document.getElementById('canvas').appendChild(obrazek);
 }
 
-// DZIAŁANIE! 
-for (i = 0; i < 6; i++) {
-    setTimeout(dodajObrazek(0),1000);
+const podajLotnisko = function () { // Wstawia obrazki z bazy lotnisk
+    for (i = 0; i < 6; i++) {
+        setTimeout(dodajObrazek(0),1000);
+    }
+    for (i = 0; i < 15; i++) {
+        setTimeout(dodajObrazek(1),500);
+    }
+    for (i = 0; i < 6; i++) {
+        setTimeout(dodajObrazek(2),500);
+    }
+    for (i = 0; i < 3; i++) {
+        setTimeout(dodajObrazek(3),500);
+    }
 }
 
-for (i = 0; i < 15; i++) {
-    setTimeout(dodajObrazek(1),500);
- }
- for (i = 0; i < 6; i++) {
-    setTimeout(dodajObrazek(2),500);
- }
- for (i = 0; i < 3; i++) {
-    setTimeout(dodajObrazek(3),500);
- }
+const wprowadzEkran = function () {
+    var canvas = document.getElementById("canvas");
+    var opacity = 0;
+    var intervalID = setInterval(function () {
+        if (opacity < 1) {
+            opacity = opacity + 0.1;
+            canvas.style.opacity = opacity;
+        } else {
+            clearInterval(intervalID);
+        }
+    }, 50);
+}
+
+const wprowadzLotnisko = function () {
+    podajLotnisko();
+    wprowadzEkran();
+}
+
+// DZIAŁANIE! 
+window.onload = wprowadzLotnisko();
