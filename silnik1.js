@@ -1,47 +1,51 @@
 // STAŁE PORZĄDKOWE
 
 var nObrazkow = 10; // Minimalna liczba obrazków na ekranie
-const n0Grunt = 30; // Liczba grafik ziemi, folder 0
-const n1Male = 44; // Liczba grafik budynków, folder 1Male
-const n2Srednie = 11; // jw
-const n3Duze = 9; // jw
+const n00Grunt = 30; // Liczba grafik ziemi, folder 0
+const n01Male = 44; // Liczba grafik budynków, folder 1Male
+const n02Srednie = 11; // jw
+const n03Duze = 9; // jw
 const xy_w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 const xy_h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    // wymiary ekranu
-
-
-// FUNKCJE PORZĄDKOWE
-
-const losujCos = function (n) { // generuje liczbę do N
+var losujCos = function (n) { // generuje liczbę do N
     return Math.floor(Math.random() * (n));
 };
 
 // NAPISY
-
 var liczba = losujCos(666); // Tego używam do numeru wariantu
 document.getElementById("numerWariantu").innerHTML = liczba;
-
-var litera = "W:" + xy_w + " H:" + xy_h;
+var litera = "Wymiary ekranu. W:" + xy_w + " H:" + xy_h;
 console.log(litera);
 
 // DODAWANIE GRAFIK
 
-const dodajObrazek = function (folder) {
+// #TODO Tutaj wprowadzić rozróżnienie zależne od stałej "wariant"
+// #TODO Brać wymiary ekranu i dopasowywać do nich liczbę elementów?
+
+const dodajObrazek = function (wariant, folder) {
     var obrazek = document.createElement("img");
     var nObrazkowWFolderze;
-    switch (folder) {
-        case 0:
-            nObrazkowWFolderze = n0Grunt;
-            break;
-        case 1:
-            nObrazkowWFolderze = n1Male;
-            break;
-        case 2:
-            nObrazkowWFolderze = n2Srednie;
-            break;
-        case 3:
-            nObrazkowWFolderze = n3Duze;
-            break;
+    switch (wariant) {
+        case "park":
+            console.log("Wariant park czeka na wykonanie!");
+        break;
+        case "lotnisko":
+            console.log("Wariant lotnisko zostaje wykonany!");
+            switch (folder) {
+                case 0:
+                    nObrazkowWFolderze = 1;
+                    break;
+                case 1:
+                    nObrazkowWFolderze = 1;
+                    break;
+                case 2:
+                    nObrazkowWFolderze = 1;
+                    break;
+                case 3:
+                    nObrazkowWFolderze = 1;
+                    break;
+            }
+        break;
     }
     console.log(nObrazkowWFolderze);
     var nObrazka = losujCos(nObrazkowWFolderze);
@@ -62,16 +66,16 @@ const dodajObrazek = function (folder) {
 
 const podajLotnisko = function () { // Wstawia obrazki z bazy lotnisk
     for (i = 0; i < 6; i++) {
-        setTimeout(dodajObrazek(0),1000);
+        setTimeout(dodajObrazek(wariant, "lot0"),1000);
     }
     for (i = 0; i < 15; i++) {
-        setTimeout(dodajObrazek(1),500);
+        setTimeout(dodajObrazek(wariant, "lot1"),500);
     }
     for (i = 0; i < 6; i++) {
-        setTimeout(dodajObrazek(2),500);
+        setTimeout(dodajObrazek(wariant, "lot2"),500);
     }
     for (i = 0; i < 3; i++) {
-        setTimeout(dodajObrazek(3),500);
+        setTimeout(dodajObrazek(wariant, "lot3"),500);
     }
 }
 
@@ -89,6 +93,7 @@ const wprowadzEkran = function () {
 }
 
 const wprowadzLotnisko = function () {
+    console.log(wariant);
     podajLotnisko();
     wprowadzEkran();
 }
